@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PP San Diego Photoshoot 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #0d1824;
+    --ocean: #0f2035;
+    --blue: #2a7fb5;
+    --sky: #5aadd4;
+    --terra: #d4724a;
+    --rust: #b85c38;
+    --gold: #d4a96e;
+    --sand: #ede0cc;
+    --cream: #faf6f0;
+    --muted: #7a8e9a;
+    --mid: #1e3045;
+    --warm-mid: #253a50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--deep);
+    color: var(--sand);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── BANNER ── */
+  .top-banner {
+    text-align: center;
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(90deg, var(--blue), #1a6a9a);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(42,127,181,0.2) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 20%, rgba(212,114,74,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(13,24,36,0.6) 0%, transparent 80%),
+      var(--deep);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 180px;
+    background: linear-gradient(to top, rgba(42,127,181,0.07), transparent);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 9vw, 90px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--cream);
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+  }
+
+  .hero-title em { font-style: italic; color: var(--terra); }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 44px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+  }
+
+  .hero-dates {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.8s;
+  }
+
+  .hero-date-item { text-align: center; }
+  .hero-date-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+  .hero-date-val { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--sand); }
+
+  .hero-includes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 640px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 1s;
+  }
+
+  .include-pill {
+    background: rgba(42,127,181,0.15);
+    border: 1px solid rgba(42,127,181,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: var(--sand);
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,24,36,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42,127,181,0.2);
+    padding: 0 24px; overflow-x: auto; scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+
+  .nav-inner { display: flex; min-width: max-content; max-width: 1100px; margin: 0 auto; }
+
+  .nav-link {
+    padding: 16px 18px; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); text-decoration: none;
+    cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s; white-space: nowrap;
+  }
+  .nav-link:hover { color: var(--sand); }
+  .nav-link.active { color: var(--terra); border-bottom-color: var(--terra); }
+
+  /* ── TIMELINE ── */
+  .timeline-banner {
+    background: linear-gradient(135deg, rgba(42,127,181,0.1), rgba(212,114,74,0.06));
+    border: 1px solid rgba(42,127,181,0.22);
+    border-radius: 12px;
+    margin: 40px auto; max-width: 1100px;
+    padding: 28px 36px;
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+
+  .timeline-now-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sky); white-space: nowrap; }
+
+  .timeline-track { flex: 1; min-width: 280px; display: flex; align-items: center; position: relative; }
+
+  .timeline-line { position: absolute; height: 2px; background: rgba(122,142,154,0.2); left: 0; right: 0; top: 50%; transform: translateY(-50%); z-index: 0; }
+
+  .timeline-progress { position: absolute; height: 2px; background: linear-gradient(90deg, var(--blue), var(--terra)); left: 0; top: 50%; transform: translateY(-50%); z-index: 1; transition: width 1s ease; }
+
+  .timeline-nodes { display: flex; justify-content: space-between; width: 100%; position: relative; z-index: 2; }
+
+  .tnode { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .tnode-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--mid); border: 2px solid var(--mid); transition: all 0.3s; }
+  .tnode.done .tnode-dot { background: var(--blue); border-color: var(--blue); box-shadow: 0 0 8px rgba(42,127,181,0.5); }
+  .tnode.current .tnode-dot { background: var(--terra); border-color: var(--terra); box-shadow: 0 0 14px rgba(212,114,74,0.6); transform: scale(1.4); }
+  .tnode-label { font-size: 10px; color: var(--muted); text-align: center; white-space: nowrap; }
+  .tnode.current .tnode-label { color: var(--terra); font-weight: 500; }
+  .tnode.done .tnode-label { color: var(--sky); }
+
+  .timeline-message { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--terra); white-space: nowrap; }
+
+  /* ── MAIN ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── SECTIONS ── */
+  .section { margin-bottom: 8px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: border-color 0.3s; }
+  .section.highlighted { border-color: rgba(212,114,74,0.4); box-shadow: 0 0 32px rgba(212,114,74,0.07); }
+
+  .section-header { display: flex; align-items: center; justify-content: space-between; padding: 24px 32px; cursor: pointer; background: rgba(13,24,36,0.8); transition: background 0.2s; user-select: none; }
+  .section-header:hover { background: rgba(30,48,69,0.5); }
+  .section.highlighted .section-header { background: rgba(212,114,74,0.07); }
+
+  .section-header-left { display: flex; align-items: center; gap: 16px; }
+  .section-number { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--muted); min-width: 24px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--cream); }
+
+  .active-badge { background: var(--blue); color: white; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; font-family: 'DM Sans', sans-serif; }
+  .urgent-badge { background: #b5471a; color: white; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; padding: 3px 10px; border-radius: 100px; font-family: 'DM Sans', sans-serif; animation: pulse 2s infinite; }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+
+  .section-chevron { color: var(--muted); font-size: 18px; transition: transform 0.3s; }
+  .section.open .section-chevron { transform: rotate(180deg); }
+
+  .section-body { display: none; padding: 0 32px 32px; background: rgba(13,24,36,0.5); }
+  .section.open .section-body { display: block; }
+
+  /* ── CONTENT ── */
+  .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 24px 0; }
+
+  h3 { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--gold); margin-bottom: 12px; margin-top: 24px; }
+  h3:first-child { margin-top: 0; }
+
+  p { font-size: 14px; color: var(--sand); margin-bottom: 10px; line-height: 1.75; }
+
+  ul { list-style: none; padding: 0; margin-bottom: 10px; }
+  ul li { font-size: 14px; color: var(--sand); padding: 5px 0 5px 20px; position: relative; line-height: 1.6; }
+  ul li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-size: 12px; }
+
+  strong { color: var(--cream); font-weight: 500; }
+
+  .highlight-box { background: rgba(42,127,181,0.1); border: 1px solid rgba(42,127,181,0.25); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .highlight-box p { margin: 0; }
+
+  .info-box { background: rgba(212,169,110,0.08); border: 1px solid rgba(212,169,110,0.2); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .info-box p { margin: 0; }
+
+  .urgent-box { background: rgba(181,71,26,0.12); border: 2px solid rgba(181,71,26,0.4); border-radius: 10px; padding: 16px 20px; margin: 16px 0; }
+  .urgent-box p { margin: 0; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .col-block { background: rgba(30,48,69,0.35); border-radius: 10px; padding: 20px; }
+  .col-block h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+
+  /* Payment timeline */
+  .payment-timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 500px) { .payment-timeline { grid-template-columns: 1fr; } }
+
+  .payment-step { background: rgba(30,48,69,0.35); border: 1px solid rgba(42,127,181,0.2); border-radius: 10px; padding: 18px; }
+  .payment-step.urgent-step { border-color: rgba(181,71,26,0.4); background: rgba(181,71,26,0.08); }
+  .payment-step-num { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .payment-step-amount { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); }
+  .payment-step-date { font-size: 12px; color: var(--sky); margin-top: 4px; font-weight: 500; }
+
+  /* Payment cards */
+  .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  @media (max-width: 500px) { .payment-grid { grid-template-columns: 1fr; } }
+
+  .payment-card { background: rgba(30,48,69,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 18px; }
+  .payment-card .flag { font-size: 22px; margin-bottom: 8px; }
+  .payment-card .country { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .payment-card .method { font-size: 14px; color: var(--cream); font-weight: 500; }
+  .payment-card .detail { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* Shoot cards */
+  .shoot-block { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 500px) { .shoot-block { grid-template-columns: 1fr; } }
+
+  .shoot-card { border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.08); }
+  .shoot-card.studio { background: rgba(30,48,69,0.5); border-color: rgba(42,127,181,0.3); }
+  .shoot-card.outdoor { background: rgba(212,114,74,0.08); border-color: rgba(212,114,74,0.25); }
+  .shoot-card-icon { font-size: 24px; margin-bottom: 10px; }
+  .shoot-card-title { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--cream); margin-bottom: 8px; }
+
+  /* Departure cards */
+  .depart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 500px) { .depart-grid { grid-template-columns: 1fr; } }
+
+  .depart-card { background: rgba(30,48,69,0.35); border: 1px solid rgba(42,127,181,0.2); border-radius: 10px; padding: 18px; }
+  .depart-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); margin-bottom: 8px; }
+  .depart-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--cream); margin-bottom: 6px; }
+
+  /* Workout */
+  .workout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
+  @media (max-width: 500px) { .workout-grid { grid-template-columns: 1fr; } }
+
+  .exercise-item { display: flex; justify-content: space-between; align-items: center; background: rgba(30,48,69,0.4); border-radius: 8px; padding: 10px 14px; font-size: 13px; }
+  .exercise-name { color: var(--sand); }
+  .exercise-sets { color: var(--sky); font-family: 'Cormorant Garamond', serif; font-size: 16px; }
+
+  /* Tanning */
+  .tan-options { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 500px) { .tan-options { grid-template-columns: 1fr; } }
+
+  .tan-card { background: rgba(30,48,69,0.3); border-radius: 10px; padding: 18px; border: 1px solid rgba(255,255,255,0.07); }
+  .tan-card.rec { border-color: rgba(212,114,74,0.35); background: rgba(212,114,74,0.08); }
+  .tan-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terra); margin-bottom: 10px; }
+
+  /* Merch */
+  .merch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+  .merch-item { background: rgba(30,48,69,0.4); border-radius: 10px; padding: 16px; text-align: center; }
+  .merch-name { font-size: 13px; color: var(--sand); margin-bottom: 6px; }
+  .merch-price { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); }
+  .merch-currency { font-size: 10px; color: var(--muted); letter-spacing: 0.1em; }
+
+  /* Link buttons */
+  .link-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--terra); color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 13px; letter-spacing: 0.05em; margin-top: 16px; transition: background 0.2s, transform 0.2s; font-family: 'DM Sans', sans-serif; }
+  .link-btn:hover { background: var(--rust); transform: translateY(-1px); }
+  .link-btn.secondary { background: rgba(42,127,181,0.15); border: 1px solid rgba(42,127,181,0.35); color: var(--sky); }
+  .link-btn.secondary:hover { background: rgba(42,127,181,0.28); }
+
+  /* Packing */
+  .packing-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+  @media (max-width: 600px) { .packing-cols { grid-template-columns: 1fr; } }
+
+  .pack-section h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--gold); margin-bottom: 12px; font-weight: 600; }
+
+  .check-item { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 13px; color: var(--sand); cursor: pointer; transition: color 0.2s; line-height: 1.5; }
+  .check-item.checked { color: var(--muted); text-decoration: line-through; }
+  .check-box { width: 16px; height: 16px; border-radius: 4px; border: 1px solid rgba(42,127,181,0.4); background: transparent; flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .check-item.checked .check-box { background: var(--blue); border-color: var(--blue); }
+  .check-item.checked .check-box::after { content: '✓'; font-size: 10px; color: white; }
+
+  .section-active-note { display: inline-block; background: rgba(212,114,74,0.12); border: 1px solid rgba(212,114,74,0.3); border-radius: 6px; padding: 8px 14px; font-size: 12px; color: var(--terra); margin-bottom: 16px; }
+
+  /* Closing */
+  .closing { text-align: center; padding: 64px 24px; background: linear-gradient(135deg, rgba(42,127,181,0.08), rgba(212,114,74,0.05)); border-radius: 20px; margin-top: 32px; border: 1px solid rgba(42,127,181,0.18); }
+  .closing-quote { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 3.5vw, 38px); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.5; max-width: 700px; margin: 0 auto; }
+  .closing-sig { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sky); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 600px) {
+    .section-header { padding: 18px 20px; }
+    .section-body { padding: 0 20px 24px; }
+    .timeline-banner { padding: 20px; }
+    .timeline-message { display: none; }
+  }
+
+  footer { text-align: center; padding: 40px 24px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<div class="top-banner" id="topBanner">
+  ☀️ &nbsp;<strong id="bannerText">First payment of $425 USD ($585 CAD) due October 9, 2026</strong>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Physique Physicians™ &nbsp;·&nbsp; 2026</div>
+  <h1 class="hero-title">Physique Physicians<br><em>San Diego</em> Photoshoot</h1>
+  <div class="hero-sub">Mission Hills &nbsp;·&nbsp; San Diego, California</div>
+  <div class="hero-dates">
+    <div class="hero-date-item">
+      <span class="hero-date-label">Arrive</span>
+      <span class="hero-date-val">November 12, 2026</span>
+    </div>
+    <div class="hero-date-item">
+      <span class="hero-date-label">📸 Shoot Day</span>
+      <span class="hero-date-val">November 13, 2026</span>
+    </div>
+    <div class="hero-date-item">
+      <span class="hero-date-label">Depart</span>
+      <span class="hero-date-val">Nov 14 or 15, 2026</span>
+    </div>
+  </div>
+  <div class="hero-includes">
+    <span class="include-pill">Professional Photos</span>
+    <span class="include-pill">Hair &amp; Makeup</span>
+    <span class="include-pill">San Diego Villa Stay</span>
+    <span class="include-pill">Most Meals Provided</span>
+    <span class="include-pill">Studio &amp; Lifestyle Shoot</span>
+    <span class="include-pill">Celebratory Dinner</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-link" onclick="scrollToSection('investment')">Investment</a>
+    <a class="nav-link" onclick="scrollToSection('logistics')">Logistics</a>
+    <a class="nav-link" onclick="scrollToSection('theshoot')">The Shoot</a>
+    <a class="nav-link" onclick="scrollToSection('travel')">Travel</a>
+    <a class="nav-link" onclick="scrollToSection('training')">Training</a>
+    <a class="nav-link" onclick="scrollToSection('nutrition')">Nutrition</a>
+    <a class="nav-link" onclick="scrollToSection('tanning')">Tanning</a>
+    <a class="nav-link" onclick="scrollToSection('hair')">Hair &amp; MU</a>
+    <a class="nav-link" onclick="scrollToSection('athleisure')">Athleisure</a>
+    <a class="nav-link" onclick="scrollToSection('packing')">Packing</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- TIMELINE -->
+  <div class="timeline-banner">
+    <div class="timeline-now-label">You are here</div>
+    <div class="timeline-track">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+      <div class="timeline-nodes">
+        <div class="tnode" data-stage="months"><div class="tnode-dot"></div><div class="tnode-label">1–2 Months Out</div></div>
+        <div class="tnode" data-stage="twoweeks"><div class="tnode-dot"></div><div class="tnode-label">2 Weeks Out</div></div>
+        <div class="tnode" data-stage="twodays"><div class="tnode-dot"></div><div class="tnode-label">2–3 Days Out</div></div>
+        <div class="tnode" data-stage="daybefore"><div class="tnode-dot"></div><div class="tnode-label">Day Before</div></div>
+        <div class="tnode" data-stage="shootday"><div class="tnode-dot"></div><div class="tnode-label">Shoot Day 🔥</div></div>
+      </div>
+    </div>
+    <div class="timeline-message" id="timelineMessage"></div>
+  </div>
+
+  <!-- 1. INVESTMENT -->
+  <div class="section open" id="investment">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">01</span>
+        <span class="section-title">Investment</span>
+        <span class="urgent-badge" id="investmentBadge">Due Oct 9</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="urgent-box" id="urgentBox1">
+        <p id="urgentBox1Text">⚡ <strong>First payment of $425 USD ($585 CAD) is due Friday, October 9, 2026.</strong> Lock in your spot!</p>
+      </div>
+      <div class="payment-timeline">
+        <div class="payment-step urgent-step">
+          <div class="payment-step-num">Payment 1</div>
+          <div class="payment-step-amount">$425 USD</div>
+          <div class="payment-step-date">Due Friday, October 9 &nbsp;·&nbsp; ~$585 CAD</div>
+        </div>
+        <div class="payment-step">
+          <div class="payment-step-num">Payment 2</div>
+          <div class="payment-step-amount">$425 USD</div>
+          <div class="payment-step-date">Due Friday, October 30 &nbsp;·&nbsp; ~$585 CAD</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:4px">Total investment: <strong style="color:var(--cream)">$850 USD (~$1,170 CAD)</strong> &nbsp;·&nbsp; Split into two equal payments</p>
+      <div class="divider"></div>
+      <h3>How to Pay</h3>
+      <div class="payment-grid">
+        <div class="payment-card">
+          <div class="flag">🇨🇦</div>
+          <div class="country">Canadians — E-Transfer (CAD)</div>
+          <div class="method">rachelwolo@gmail.com</div>
+          <div class="detail">Please include your name in the note</div>
+        </div>
+        <div class="payment-card">
+          <div class="flag">🇺🇸</div>
+          <div class="country">Americans — Venmo (USD)</div>
+          <div class="method">@annemariewolo</div>
+          <div class="detail"><em style="font-size:12px">Do not check "this is for business"</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. LOGISTICS -->
+  <div class="section" id="logistics">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">02</span>
+        <span class="section-title">Location &amp; Logistics</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <h3>Address</h3>
+      <p><strong>4040 Witherby Street, San Diego, CA 92103</strong><br>
+      <em style="color:var(--muted);font-size:13px">Mission Hills neighbourhood — San Diego</em></p>
+      <div class="divider"></div>
+      <h3>Schedule</h3>
+      <ul>
+        <li><strong>Arrive:</strong> Thursday, November 12 — anytime, the Airbnb will be available all day</li>
+        <li><strong>📸 Photoshoot Day:</strong> Friday, November 13</li>
+        <li><strong>Depart:</strong> Saturday evening red eye (Nov 14) OR Sunday, November 15 — check-out by 11am</li>
+      </ul>
+      <div class="divider"></div>
+      <h3>Departure Options</h3>
+      <div class="depart-grid">
+        <div class="depart-card">
+          <div class="depart-label">Option A</div>
+          <div class="depart-title">Saturday Night Red Eye ✈️</div>
+          <p style="font-size:13px;margin:0">Fly home Saturday evening — great if you want to be back Sunday morning. Check flight times carefully and plan your Uber to SAN accordingly.</p>
+        </div>
+        <div class="depart-card">
+          <div class="depart-label">Option B</div>
+          <div class="depart-title">Sunday Morning Departure ☀️</div>
+          <p style="font-size:13px;margin:0">Stay the full weekend and depart Sunday, November 15. Check-out is by 11am — book your flight for mid-morning or after.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h3>Outfits</h3>
+      <p>Bring <strong>2–3 outfits</strong> — matching sets and swimsuits both work beautifully. Think California effortless — clean lines, confident fits, whatever makes you feel your best.</p>
+      <div class="divider"></div>
+      <h3>Outfit Shopping</h3>
+      <div class="two-col">
+        <div class="col-block">
+          <h4>Sets</h4>
+          <ul>
+            <li>Skims</li>
+            <li>Amazon (US &amp; CAN)</li>
+            <li>Aerie</li>
+            <li>Lounge</li>
+            <li>Bonds</li>
+            <li>Calvin Klein</li>
+            <li>Gooseberry (bikinis &amp; sets)</li>
+            <li>TNA</li>
+            <li>Cotton On (US ships only)</li>
+            <li>Joah Brown ($$$$)</li>
+            <li>Ardenes</li>
+          </ul>
+        </div>
+        <div class="col-block">
+          <h4>Swimsuits</h4>
+          <ul>
+            <li>Monday Swimwear</li>
+            <li>Slate Swim</li>
+            <li>Thaikila</li>
+            <li>Away That Day</li>
+            <li>437 <em style="color:var(--muted)">(Kenzie bottoms are the GOAT)</em></li>
+            <li>One One Swimwear</li>
+            <li>Nyud</li>
+            <li>Oh Polly</li>
+            <li>Kulani Kinis</li>
+            <li>Left on Friday</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. THE SHOOT -->
+  <div class="section" id="theshoot">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">03</span>
+        <span class="section-title">The Shoot</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <p>San Diego brings a whole new energy to this shoot — golden California light, warm tones, and a stunning Mission Hills villa as our backdrop. Our photographer <strong>Sarah Bell</strong> will capture you across two distinct settings on shoot day.</p>
+      <div class="shoot-block">
+        <div class="shoot-card studio">
+          <div class="shoot-card-icon">💡</div>
+          <div class="shoot-card-title">Studio Lighting</div>
+          <p style="font-size:13px;margin:0">Professional studio lighting setup for that clean, editorial glow — polished, powerful, and timeless. The kind of shots that stop the scroll.</p>
+        </div>
+        <div class="shoot-card outdoor">
+          <div class="shoot-card-icon">🌅</div>
+          <div class="shoot-card-title">Lifestyle &amp; Outdoor</div>
+          <p style="font-size:13px;margin:0">Relaxed, confident lifestyle shots making use of the villa and its surroundings — warm California light, effortless energy, and nothing forced.</p>
+        </div>
+      </div>
+      <div class="info-box">
+        <p>📸 &nbsp;Photography by <strong>Sarah Bell</strong> &nbsp;·&nbsp; Hair &amp; Makeup by <strong>Natalie</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. TRAVEL -->
+  <div class="section" id="travel">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">04</span>
+        <span class="section-title">Getting Here</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <h3>Airport</h3>
+      <div class="info-box">
+        <p>✈️ &nbsp;Fly into <strong>SAN — San Diego International Airport</strong>. It's only about <strong>10 minutes from the Airbnb</strong> — one of the easiest airport-to-accommodation trips you'll ever have. A quick Uber and you're there.</p>
+      </div>
+      <div class="divider"></div>
+      <h3>By City</h3>
+      <ul>
+        <li><strong>GTA / Niagara / Ottawa:</strong> Look for direct or one-stop flights into SAN from YYZ or YOW. Set a Google Flights price alert as soon as your spot is confirmed — San Diego is a popular route and prices vary significantly with timing.</li>
+        <li><strong>Minneapolis (Maggie):</strong> You have solid direct options into SAN — it's a well-served route from MSP.</li>
+        <li><strong>Wisconsin (Kaitlyn):</strong> Connect through a major hub — Chicago (ORD or MDW) or Minneapolis are your best bets into SAN.</li>
+        <li><strong>California (Jill):</strong> You're already local — lucky you! Drive or short flight depending on where you are.</li>
+      </ul>
+      <div class="highlight-box" style="margin-top:16px">
+        <p>💡 &nbsp;Set up a <strong>price alert on Google Flights</strong> the moment your spot is confirmed. You'll get automatic emails when prices drop on your route. Book early — November is a busy travel period.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. TRAINING -->
+  <div class="section" id="training">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">05</span>
+        <span class="section-title">Training</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="section-active-note" id="trainingNote" style="display:none">⚡ This week! Pump session Tuesday or Wednesday, Nov 10–11 (unless your coach says otherwise).</div>
+      <p>Your last training session before the shoot is a <strong>pump workout</strong> — run it on <strong>Tuesday or Wednesday, November 10–11</strong>, unless your coach directs you otherwise. Your coach will give you detailed logistics based on your individual needs leading into shoot day.</p>
+      <div class="info-box">
+        <p><strong>Reps:</strong> 10–12 per set &nbsp;&nbsp;<strong>Weight:</strong> 60–70% of your usual &nbsp;&nbsp;<strong>Goal:</strong> Endurance burn, not failure. No need to log in your tracking sheet.</p>
+      </div>
+      <div class="workout-grid">
+        <div class="exercise-item"><span class="exercise-name">Hamstring Curls</span><span class="exercise-sets">4 sets</span></div>
+        <div class="exercise-item"><span class="exercise-name">70° Shoulder Press</span><span class="exercise-sets">3 sets</span></div>
+        <div class="exercise-item"><span class="exercise-name">Leg Extensions</span><span class="exercise-sets">4 sets</span></div>
+        <div class="exercise-item"><span class="exercise-name">Pulldown (over/under)</span><span class="exercise-sets">3 sets</span></div>
+        <div class="exercise-item"><span class="exercise-name">Lateral Raises</span><span class="exercise-sets">4 sets</span></div>
+        <div class="exercise-item"><span class="exercise-name">Hip Thrusts</span><span class="exercise-sets">3 sets</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. NUTRITION -->
+  <div class="section" id="nutrition">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">06</span>
+        <span class="section-title">Nutrition &amp; Steps</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <h3>Nutrition</h3>
+      <div class="highlight-box">
+        <p><strong>No major changes.</strong> Stick to what's been working — we don't believe in last-minute overhauls. Your body is already in a great spot. Keep things consistent and stress low.</p>
+      </div>
+      <h3>Physique Update — November 9</h3>
+      <p>On <strong>Monday morning, November 9</strong>, send a morning physique update to your 1:1 coach. Make sure it's:</p>
+      <ul>
+        <li>Fasted (no food or drink beforehand)</li>
+        <li>After urination</li>
+      </ul>
+      <p>Your coach will then adjust your nutrition and step targets for the days leading up to the shoot based on how you're looking, feeling, and your menstrual cycle timing.</p>
+      <h3>Steps</h3>
+      <p>Your coach may adjust your step count 2–3 days out. You'll get the full details when you send your November 9 physique update.</p>
+      <div class="info-box">
+        <p>🤍 Your personalized peak week protocol comes directly from your 1:1 coach — this is where it gets tailored to you specifically.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. TANNING -->
+  <div class="section" id="tanning">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">07</span>
+        <span class="section-title">Tanning</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="tan-options">
+        <div class="tan-card rec">
+          <div class="tan-title">✨ Airbrush Tan — Recommended</div>
+          <ul>
+            <li>Book <strong>Ultra Dark</strong> — darker is always better on camera</li>
+            <li>Aim for <strong>Tuesday, November 10</strong> (2–3 days before shoot) for best results</li>
+            <li>Ask your provider how long the formula takes to develop — some need 24–48 hrs</li>
+          </ul>
+        </div>
+        <div class="tan-card">
+          <div class="tan-title">Self-Tanner Option</div>
+          <ul>
+            <li>Bondi Sands Ultra Dark or St. Tropez are great options</li>
+            <li>Bring your self-tanner for backup — you may need a second coat</li>
+            <li>We'll have self-tanner on hand for touch-ups</li>
+          </ul>
+        </div>
+      </div>
+      <h3>Prep Tips (Both Options)</h3>
+      <ul>
+        <li>Wax or shave <strong>12–24 hours before</strong> your tan appointment</li>
+        <li>Avoid hot showers before your appointment</li>
+        <li>Exfoliate the day before for an even application</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 8. HAIR & MAKEUP -->
+  <div class="section" id="hair">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">08</span>
+        <span class="section-title">Hair &amp; Makeup</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="info-box" style="margin-bottom:16px">
+        <p>💄 &nbsp;Hair &amp; Makeup for shoot day will be handled by <strong>Natalie</strong>. She may send additional tips and details closer to the shoot date!</p>
+      </div>
+      <div class="two-col">
+        <div class="col-block">
+          <h4>Hair</h4>
+          <ul>
+            <li>Wash the <strong>night before</strong> the shoot</li>
+            <li>Air dry is fine unless your hair is very frizzy or kinky — if so, blow-dry</li>
+            <li>If you get greasy easily: minimal conditioner, shampoo twice, rinse really well</li>
+          </ul>
+        </div>
+        <div class="col-block">
+          <h4>Skin &amp; Makeup</h4>
+          <ul>
+            <li>Morning of shoot: <strong>washed and moisturized, makeup free</strong> — Natalie will take it from there</li>
+            <li>Bring screenshots of hair and makeup inspo to show her your vision</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. ATHLEISURE -->
+  <div class="section" id="athleisure">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">09</span>
+        <span class="section-title">PP Athleisure Orders</span>
+        <span class="active-badge">20% Off</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <div class="highlight-box">
+        <p>🎉 Photoshoot clients get <strong>20% off all PP Athleisure + free shipping</strong>. Rachel will pack and bring your items directly to San Diego.</p>
+      </div>
+      <div class="urgent-box">
+        <p>⚡ <strong>Athleisure orders must be placed by Sunday, November 8.</strong> Don't miss this!</p>
+      </div>
+      <h3>Pricing (20% discount already applied)</h3>
+      <div class="merch-grid">
+        <div class="merch-item"><div class="merch-name">Oversized Tee</div><div class="merch-price">$24</div><div class="merch-currency">USD</div></div>
+        <div class="merch-item"><div class="merch-name">Straps</div><div class="merch-price">$14</div><div class="merch-currency">USD</div></div>
+        <div class="merch-item"><div class="merch-name">Socks (2 pairs)</div><div class="merch-price">$13</div><div class="merch-currency">USD</div></div>
+        <div class="merch-item"><div class="merch-name">Hoodie</div><div class="merch-price">$36</div><div class="merch-currency">USD</div></div>
+        <div class="merch-item"><div class="merch-name">Perfect Tank</div><div class="merch-price">$20</div><div class="merch-currency">USD</div></div>
+      </div>
+      <a href="https://docs.google.com/spreadsheets/d/16eVDnnVm8ws7ZyZ7I2r7XMWr0lCz_zcosgk-a4htm30/edit?usp=sharing" target="_blank" class="link-btn" style="font-size:15px;padding:14px 28px;letter-spacing:0.08em;margin-top:20px;display:block;text-align:center;max-width:480px;">👕 CLICK HERE TO PLACE YOUR ATHLEISURE ORDER</a>
+      <p style="font-size:13px;color:var(--muted);margin-top:12px">Visit the link above to place your order with our photoshoot specialty athleisure pricing. You can bundle your athleisure total with your second payment by October 30.</p>
+    </div>
+  </div>
+
+  <!-- 10. PACKING -->
+  <div class="section" id="packing">
+    <div class="section-header" onclick="toggleSection(this)">
+      <div class="section-header-left">
+        <span class="section-number">10</span>
+        <span class="section-title">Packing List</span>
+      </div>
+      <span class="section-chevron">▾</span>
+    </div>
+    <div class="section-body">
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Tap any item to check it off as you pack.</p>
+      <div class="packing-cols">
+        <div class="pack-section">
+          <h4>Clothes</h4>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Gym attire &amp; straps</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Night out dinner attire (jeans + top, dress, romper — whatever you feel best in)</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>2–3 photoshoot outfits (lifestyle, swim, or matching sets)</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Lounge / exploring clothes</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>PJs</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Socks</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Bras &amp; undies</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Slides, sandals, runners</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Light jacket (San Diego evenings can be cool in November)</div>
+        </div>
+        <div class="pack-section">
+          <h4>Essentials</h4>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Passport (required for Canadians travelling to the US)</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Skincare</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Deodorant</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Sunscreen (face &amp; body)</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Makeup + H&amp;MU inspo screenshots</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Toothbrush &amp; toothpaste</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Hair brush &amp; hair ties</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Phone charger + extra charging block</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Sunglasses</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Supplements / medications</div>
+          <div class="check-item" onclick="toggleCheck(this)"><div class="check-box"></div>Headphones for the plane</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <p style="font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--sky);margin-bottom:28px">A Note From Rachel</p>
+    <p class="closing-quote">Last but definitely not least — with the shoot right around the corner, it's completely normal for those thoughts to creep in… "I'm not lean enough," "I'm not ready."</p>
+    <p style="font-size:15px;color:var(--sand);line-height:1.8;max-width:680px;margin:20px auto 16px;">But here's the truth: when you look back at these photos, you're not going to see what you thought you lacked. You're going to see what we already see — the leanest, strongest, most disciplined version of you to date.<br><br>And more importantly… a version of you who showed up.</p>
+    <p style="font-size:15px;color:var(--sand);line-height:1.8;max-width:680px;margin:0 auto 16px;">You still have time to make every single day count. Stay locked in, stay precise, and trust the process you've been executing. Because what you do now isn't about becoming "ready" — it's about reinforcing everything you've already built.</p>
+    <p style="font-size:15px;color:var(--sand);line-height:1.8;max-width:680px;margin:0 auto 24px;">You've put in the work. You've been consistent where it matters. And the real secret to being photoshoot-ready?</p>
+    <p class="closing-quote" style="font-size:clamp(22px,3.5vw,36px);">Realizing you already are 🖤</p>
+    <div class="divider" style="max-width:120px;margin:28px auto;"></div>
+    <p class="closing-sig">With love, Rachel &nbsp;·&nbsp; Physique Physicians™</p>
+  </div>
+
+</main>
+
+<footer>Physique Physicians™ &nbsp;·&nbsp; High Performance Health &nbsp;·&nbsp; San Diego 2026</footer>
+
+<script>
+  const SHOOT_DATE = new Date('2026-11-13');
+
+  function getLocalDate() {
+    const n = new Date();
+    return { y: n.getFullYear(), m: n.getMonth(), d: n.getDate() };
+  }
+
+  function dateNum(y, m, d) { return y * 10000 + m * 100 + d; }
+
+  function daysBetween(y1, m1, d1, y2, m2, d2) {
+    return Math.floor((new Date(y2, m2, d2) - new Date(y1, m1, d1)) / (1000 * 60 * 60 * 24));
+  }
+
+  function initBanner() {
+    const { y, m, d } = getLocalDate();
+    const today = dateNum(y, m, d);
+    const p1 = dateNum(2026, 9, 9);   // Oct 9 (month 0-indexed = 9)
+    const p2 = dateNum(2026, 9, 30);  // Oct 30
+
+    const banner = document.getElementById('topBanner');
+    const bannerText = document.getElementById('bannerText');
+    const badge = document.getElementById('investmentBadge');
+    const box1 = document.getElementById('urgentBox1');
+    const box1Text = document.getElementById('urgentBox1Text');
+
+    if (today < p1) {
+      const daysUntil = daysBetween(y, m, d, 2026, 9, 9);
+      if (daysUntil <= 7) {
+        bannerText.innerHTML = `⚡ First payment of $425 USD due in <strong>${daysUntil} day${daysUntil !== 1 ? 's' : ''}</strong> — October 9`;
+        badge.textContent = `${daysUntil}d Away`;
+      } else {
+        bannerText.innerHTML = `☀️ First payment of <strong>$425 USD ($585 CAD) due October 9, 2026</strong>`;
+        badge.textContent = 'Due Oct 9';
+      }
+    } else if (today === p1) {
+      banner.style.background = 'linear-gradient(90deg, #b5471a, #8a3010)';
+      bannerText.innerHTML = `🚨 <strong>First payment of $425 USD is due TODAY — Friday, October 9</strong>`;
+      badge.textContent = 'Due Today';
+      box1Text.innerHTML = `🚨 <strong>First payment of $425 USD ($585 CAD) is due TODAY.</strong> Please send payment as soon as possible!`;
+    } else if (today > p1 && today < p2) {
+      const daysUntil2 = daysBetween(y, m, d, 2026, 9, 30);
+      banner.style.background = 'linear-gradient(90deg, var(--blue), #1a6a9a)';
+      bannerText.innerHTML = `☀️ Second payment of <strong>$425 USD due October 30</strong> — ${daysUntil2} day${daysUntil2 !== 1 ? 's' : ''} away`;
+      badge.textContent = 'Due Oct 30';
+      box1Text.innerHTML = `✅ First payment received! <strong>Second payment of $425 USD ($585 CAD) is due Friday, October 30.</strong>`;
+      box1.style.background = 'rgba(42,127,181,0.1)';
+      box1.style.border = '1px solid rgba(42,127,181,0.3)';
+    } else if (today === p2) {
+      banner.style.background = 'linear-gradient(90deg, #b5471a, #8a3010)';
+      bannerText.innerHTML = `🚨 <strong>Second payment of $425 USD is due TODAY — Friday, October 30</strong>`;
+      badge.textContent = 'Due Today';
+      box1Text.innerHTML = `🚨 <strong>Second payment of $425 USD ($585 CAD) is due TODAY.</strong> Please send payment as soon as possible!`;
+    } else {
+      const late = daysBetween(2026, 9, 30, y, m, d);
+      banner.style.background = 'linear-gradient(90deg, #8b1a1a, #6b1010)';
+      bannerText.innerHTML = `🚨 <strong>Your final payment is ${late} day${late !== 1 ? 's' : ''} late — please send payment ASAP</strong>`;
+      badge.textContent = `${late}d Late`;
+      box1Text.innerHTML = `🚨 <strong>Your final payment is ${late} day${late !== 1 ? 's' : ''} overdue.</strong> Please send $425 USD immediately.`;
+      box1.style.background = 'rgba(139,26,26,0.15)';
+      box1.style.border = '2px solid rgba(139,26,26,0.5)';
+    }
+  }
+
+  function getStage() {
+    const now = new Date();
+    const daysOut = Math.ceil((SHOOT_DATE - now) / (1000 * 60 * 60 * 24));
+    if (daysOut > 14) return { stage: 'months', index: 0, progress: Math.max(5, Math.min(18, (60 - daysOut) / 46 * 18)) };
+    if (daysOut > 3)  return { stage: 'twoweeks', index: 1, progress: 25 + (14 - daysOut) / 11 * 25 };
+    if (daysOut > 1)  return { stage: 'twodays', index: 2, progress: 60 };
+    if (daysOut === 1) return { stage: 'daybefore', index: 3, progress: 80 };
+    if (daysOut <= 0)  return { stage: 'shootday', index: 4, progress: 100 };
+    return { stage: 'months', index: 0, progress: 5 };
+  }
+
+  const messages = {
+    months:    'Outfits, flights & payments ✈️',
+    twoweeks:  'Book your tan & lock in flights ☀️',
+    twodays:   'Pump session + tan this week 🔥',
+    daybefore: 'Wash hair, early night — tomorrow is YOUR day 🌅',
+    shootday:  'IT\'S SHOOT DAY — you are so ready 🏆'
+  };
+
+  const stageHighlights = {
+    months: ['logistics', 'investment', 'travel'],
+    twoweeks: ['tanning', 'training', 'nutrition'],
+    twodays: ['training', 'tanning', 'nutrition'],
+    daybefore: ['hair', 'nutrition'],
+    shootday: ['hair', 'theshoot']
+  };
+
+  function initTimeline() {
+    const { stage, index, progress } = getStage();
+    const nodes = document.querySelectorAll('.tnode');
+    nodes.forEach((n, i) => {
+      if (i < index) n.classList.add('done');
+      else if (i === index) n.classList.add('current');
+    });
+    document.getElementById('timelineProgress').style.width = progress + '%';
+    document.getElementById('timelineMessage').textContent = messages[stage] || '';
+    (stageHighlights[stage] || []).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.add('highlighted');
+    });
+    if (stage === 'twoweeks' || stage === 'twodays') {
+      const note = document.getElementById('trainingNote');
+      if (note) note.style.display = 'inline-block';
+    }
+  }
+
+  function toggleSection(header) { header.parentElement.classList.toggle('open'); }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (!el.classList.contains('open')) el.classList.add('open');
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  }
+
+  function toggleCheck(item) { item.classList.toggle('checked'); }
+
+  initBanner();
+  initTimeline();
+</script>
+</body>
+</html>
